@@ -1,0 +1,71 @@
+#vcomment input {
+    font-size: .65rem
+}
+
+#vcomment button {
+    font-size: .7rem;
+    padding: .3rem 1rem;
+    background-color: #49b1f5;
+    color: #fff;
+    border-color: #fff
+}
+
+#vcomment textarea {
+    font-size: .7rem;
+    background: url(/img/comment_bg.png) 100% 100% no-repeat
+}
+
+#vcomment .info {
+    display: none
+}
+
+#vcomment .vcomment {
+    margin-top: 20px
+}
+
+#vcomment .vimg {
+    border: 0
+}
+
+#vcomment .vimg:hover {
+    -moz-transform: rotate(540deg);
+    -o-transform: rotate(540deg);
+    -webkit-transform: rotate(540deg);
+    -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -o-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    transform: rotate(540deg)
+}
+
+#vcomment .vcount {
+    font-size: .775rem
+}
+
+#vcomment .vnum {
+    font-size: 1.1rem
+}
+
+#vcomment .vnick {
+    font-size: 100%
+}
+
+#vcomment .vsys {
+    font-size: 70%
+}
+
+#vcomment .vtime {
+    font-size: .65rem
+}
+
+#vcomment .vcontent {
+    font-size: 100%
+}
+
+#vcomment .vat {
+    font-size: .7125rem;
+    color: #00c4b6;
+    border: 1px solid #00c4b6;
+    padding: 0 .8rem;
+    border-radius: 5px
+}
