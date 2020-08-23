@@ -41,7 +41,7 @@ docker run -d -p 80:80 nginx
 删除容器用`rm`命令,删除镜像用`rmi`命令
 **复合命令**
 ```sh
-# 这条命令会删除所有的容器 -q参数只输出容易的id
+# 这条命令会删除所有的容器 -q参数只输出容器的id
 docker rm -f $(docker ps -aq)
 ```
 
