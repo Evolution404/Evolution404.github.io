@@ -850,3 +850,16 @@ sudo systemctl daemon-reload
 sudo systemctl enable v2ray_auto_change.service
 sudo systemctl start v2ray_auto_change.service
 ```
+
+## 一键配置系统脚本
+
+首先在本地克隆自动配置项目
+```sh
+git clone git@github.com:Evolution404/pi_autoconfig.git
+```
+将整个项目文件夹复制到树莓派里
+执行项目里的config.sh开始一键配置,后面需要传入pi用户的新密码和smb服务器的密码
+```sh
+cd pi_autoconfig
+sudo bash config.sh pi_pw smb_pw
+```
