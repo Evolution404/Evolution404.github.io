@@ -2,6 +2,8 @@
 title: linux后台执行
 date: 2019-10-26 17:46:52
 tags:
+categories:
+- Linux
 ---
 
 ## 后台执行命令
