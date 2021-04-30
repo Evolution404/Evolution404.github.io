@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="离散数学"><meta name="keywords" content><meta name="author" content="zhang Yuxi"><meta name="copyright" content="zhang Yuxi"><title>Evolution</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#集合论"><span class="toc-number">1.</span> <span class="toc-text">集合论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#幂集"><span class="toc-number">1.1.</span> <span class="toc-text">幂集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对称差"><span class="toc-number">1.2.</span> <span class="toc-text">对称差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#德摩根律"><span class="toc-number">1.3.</span> <span class="toc-text">德摩根律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#容斥原理"><span class="toc-number">1.4.</span> <span class="toc-text">容斥原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#映射与函数"><span class="toc-number">1.5.</span> <span class="toc-text">映射与函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽屉原理"><span class="toc-number">1.6.</span> <span class="toc-text">抽屉原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#映射合成性质"><span class="toc-number">1.7.</span> <span class="toc-text">映射合成性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逆映射"><span class="toc-number">1.8.</span> <span class="toc-text">逆映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特征函数"><span class="toc-number">1.9.</span> <span class="toc-text">特征函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关系"><span class="toc-number">1.10.</span> <span class="toc-text">关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关系的概念"><span class="toc-number">1.11.</span> <span class="toc-text">关系的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关系的性质"><span class="toc-number">1.12.</span> <span class="toc-text">关系的性质</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#自反关系"><span class="toc-number">1.12.1.</span> <span class="toc-text">自反关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#反自反关系"><span class="toc-number">1.12.2.</span> <span class="toc-text">反自反关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对称关系"><span class="toc-number">1.12.3.</span> <span class="toc-text">对称关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#反对称关系"><span class="toc-number">1.12.4.</span> <span class="toc-text">反对称关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#传递关系"><span class="toc-number">1.12.5.</span> <span class="toc-text">传递关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#相容关系"><span class="toc-number">1.12.6.</span> <span class="toc-text">相容关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关系的闭包"><span class="toc-number">1.12.7.</span> <span class="toc-text">关系的闭包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关系矩阵"><span class="toc-number">1.12.8.</span> <span class="toc-text">关系矩阵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#等价关系"><span class="toc-number">1.12.9.</span> <span class="toc-text">等价关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#偏序关系"><span class="toc-number">1.12.10.</span> <span class="toc-text">偏序关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#练习"><span class="toc-number">1.12.11.</span> <span class="toc-text">练习</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可数集"><span class="toc-number">1.12.12.</span> <span class="toc-text">可数集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#连续统集"><span class="toc-number">1.12.13.</span> <span class="toc-text">连续统集</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图论"><span class="toc-number">2.</span> <span class="toc-text">图论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#图的基本概念"><span class="toc-number">2.1.</span> <span class="toc-text">图的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#无向图"><span class="toc-number">2.1.1.</span> <span class="toc-text">无向图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#有向图"><span class="toc-number">2.1.2.</span> <span class="toc-text">有向图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#子图"><span class="toc-number">2.1.3.</span> <span class="toc-text">子图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#生成子图"><span class="toc-number">2.1.4.</span> <span class="toc-text">生成子图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#极大子图"><span class="toc-number">2.1.5.</span> <span class="toc-text">极大子图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#导出子图"><span class="toc-number">2.1.6.</span> <span class="toc-text">导出子图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#顶点的度"><span class="toc-number">2.1.7.</span> <span class="toc-text">顶点的度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#n次图"><span class="toc-number">2.1.8.</span> <span class="toc-text">n次图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通道与闭通道"><span class="toc-number">2.1.9.</span> <span class="toc-text">通道与闭通道</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#迹与闭迹"><span class="toc-number">2.1.10.</span> <span class="toc-text">迹与闭迹</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#路与圈"><span class="toc-number">2.1.11.</span> <span class="toc-text">路与圈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#连通图与极大连通子图"><span class="toc-number">2.1.12.</span> <span class="toc-text">连通图与极大连通子图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#偶图"><span class="toc-number">2.1.13.</span> <span class="toc-text">偶图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#欧拉图"><span class="toc-number">2.1.14.</span> <span class="toc-text">欧拉图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#哈密顿图"><span class="toc-number">2.1.15.</span> <span class="toc-text">哈密顿图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#树和割集"><span class="toc-number">2.2.</span> <span class="toc-text">树和割集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#树和森林的定义"><span class="toc-number">2.2.1.</span> <span class="toc-text">树和森林的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#偏心率-半径-中心"><span class="toc-number">2.2.2.</span> <span class="toc-text">偏心率,半径,中心</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://gitee.com/Evolution404/picgo-img/raw/master/20191026181121-HBhrfe.jpg"></div><div class="author-info__name text-center">zhang Yuxi</div><div class="author-info__description text-center">It is not our abilities that show what we truly are , it is our choices</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">91</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">27</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">20</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://evolution404.gitee.io/markdownimg/20190513125446.png)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Evolution</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a><a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a></span></div><div id="post-info"><div id="post-title">离散数学</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-07-08<span class="post-meta__separator">|</span><i class="fa fa-calendar-check-o" aria-hidden="true"></i> 更新于 2021-04-30</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/复习/">复习</a><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">2.8k</span><span class="post-meta__separator">|</span><span>阅读时长: 9 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="集合论"><a href="#集合论" class="headerlink" title="集合论"></a>集合论</h2><h3 id="幂集"><a href="#幂集" class="headerlink" title="幂集"></a>幂集</h3><p><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190710161728.png" alt></p>
+<h3 id="对称差"><a href="#对称差" class="headerlink" title="对称差"></a>对称差</h3><p><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190708191156.png" alt></p>
+<h3 id="德摩根律"><a href="#德摩根律" class="headerlink" title="德摩根律"></a>德摩根律</h3><p><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190708191220.png" alt></p>
+<h3 id="容斥原理"><a href="#容斥原理" class="headerlink" title="容斥原理"></a>容斥原理</h3><p><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190708191301.png" alt><br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190708191315.png" alt><br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190708191329.png" alt><br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190708191349.png" alt></p>
+<hr>
+<h3 id="映射与函数"><a href="#映射与函数" class="headerlink" title="映射与函数"></a>映射与函数</h3><p><strong>映射的定义</strong><br>每个x都要找到唯一的y对应</p>
+<p><strong>单射</strong><br>简单来说就是不同的x必定对应不同的y<br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190708193420.png" alt><br><strong>满射</strong><br>任意的y都能找到映射到它的x<br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190708193526.png" alt><br><strong>双射或一一对应</strong><br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190708193619.png" alt><br><strong>恒等映射</strong><br>恒等映射记做Ix<br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190708193748.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190708194119.png" alt></p>
+<h3 id="抽屉原理"><a href="#抽屉原理" class="headerlink" title="抽屉原理"></a>抽屉原理</h3><p><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190710135250.png" alt><br>当五个数的余数存在0,1,2时, 那么这三个数的和就是3的倍数<br>如果只存在0,1或0,2或1,2时, 根据抽屉原理必然有一个余数出现了3次 那么这三个数的和是三的倍数<br>推广形式:设k和n都是任意的正整数，若至少有kn+1只鸽子分配在n个鸽巢里，则至少存在一个鸽巢中有不少于k+1只鸽子<br>(即两个抽屉放入5个物体, 得出k=2)</p>
+<h3 id="映射合成性质"><a href="#映射合成性质" class="headerlink" title="映射合成性质"></a>映射合成性质</h3><p>设f:X→Y,g:Y→Z,则</p>
+<ol>
+<li>如果f与g都是单射的，则gf也是单射的。</li>
+<li>如果f与g都是满射的，则gf也是满射的。</li>
+<li>如果f与g都是双射的，则gf也是双射的。</li>
+</ol>
+<p>设f:X→Y,g:Y→Z,则</p>
+<ol>
+<li>如果gf是单射，则f是单射。</li>
+<li>如果gf是满射，则g是满射。</li>
+<li>如果gf是双射，则f是单射且g是满射。</li>
+</ol>
+<h3 id="逆映射"><a href="#逆映射" class="headerlink" title="逆映射"></a>逆映射</h3><p>设f:X→Y,如果存在一个映射g:Y→X,使得:fg=IY且gf=IX, 则称映射f是可逆的，而g称为f的逆映射</p>
+<p><strong>左逆映射</strong><br>设f:X→Y,如果存在一个映射g:Y→X,使得:gf=IX,则称映射f是左可逆的，g称为f的左逆映射<br>即f左边加上一个映射能够变成恒等映射说明f是左可逆<br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190710142903.png" alt></p>
+<p><strong>右逆映射</strong><br>设f:X→Y,如果存在一个映射h:Y→X, 使得:fh=IY,则称映射f是右可逆的，h称为f的右逆映射<br>即f右边加上一个映射能够变成恒等映射说明f是右可逆<br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190710142806.png" alt></p>
+<p><strong>性质</strong><br>f可逆的充要条件是f是双射<br>f可逆, 那么f的逆映射是唯一的<br>f左可逆的充分必要条件是f为单射 f左可逆 -&gt; 存在gf是双射 -&gt; f是单射<br>f右可逆的充分必要条件是f为满射 f右可逆 -&gt; 存在fg是双射 -&gt; f是满射</p>
+<p><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190710143222.png" alt></p>
+<h3 id="特征函数"><a href="#特征函数" class="headerlink" title="特征函数"></a>特征函数</h3><p><strong>定义</strong><br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190710161829.png" alt><br>令X={a,b,c,d}, E={a,b}那么E的特征函数就是<br>f(a)=1 f(b)=1 f(c)=0 f(d)=0</p>
+<p><strong>Ch(X)</strong><br>Ch(X)是X中所有子集构成的特征函数的集合<br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190710162026.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190710162603.png" alt><br>可以分析出f是满射,g是单射<br>g如果为x-1那么x是1的时候映射为0不满足映射的定义 特别指定x为1映射到1</p>
+<hr>
+<h3 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h3><p><strong>定义</strong></p>
+<ul>
+<li>设A,B是两个集合,一个从AxB到{是,否}的映射R,称为从A到B的一个二元关系,或A与B间的一个二元关系</li>
+<li>设A到B是两个集合。AxB的任一子集R称为从A到B的一个二元关系</li>
+<li><strong>映射是特殊的二元关系</strong></li>
+</ul>
+<h3 id="关系的概念"><a href="#关系的概念" class="headerlink" title="关系的概念"></a>关系的概念</h3><p><strong>全关系</strong><br>AxB也是AxB的一个子集，按定义AxB也是从A到B的一个二元关系。我们把AxB叫做A到B的全关系<br>例如：A={a, b}，B={1，2}<br>AxB={（a, 1）,(a, 2),(b, 1),(b, 2)} 是A到B的全关系</p>
+<p><strong>空关系</strong><br>空集叫做A到B的空关系</p>
+<p><strong>恒等关系</strong><br>集合{(a,a)a∈A}称为A上的恒等关系或相等关系，并记为IA<br>例如：A={a, b} {（a, a）,(b, b)} 是A到A的恒等关系<br>类似于恒等映射</p>
+<p><strong>A到B的关系的个数</strong><br>设|AxB|=m,那么A到B上就有2^m个关系<br>关系就是AxB的子集, 个数也就是子集的个数</p>
+<h3 id="关系的性质"><a href="#关系的性质" class="headerlink" title="关系的性质"></a>关系的性质</h3><h4 id="自反关系"><a href="#自反关系" class="headerlink" title="自反关系"></a>自反关系</h4><p>X上的二元关系R称为自反的，如果所有的x∈X,xRx<br>直接说就是这个关系包含恒等关系的所有元素</p>
+<h4 id="反自反关系"><a href="#反自反关系" class="headerlink" title="反自反关系"></a>反自反关系</h4><p>X上的二元关系R称为反自反的,如果所有的x∈X,都有(x,x)∉R<br>直接说就是这个关系不存在恒等关系的任意元素</p>
+<blockquote>
+<p>设A={a, b, c, d}，R是A到A的一个二元关系：<br>  R={(a,b),(c,d),(b,c),(a,a)}<br>  既不是反自反的，也不是自反的</p>
+</blockquote>
+<p><strong>对一个集合X其上的自反关系和反自反关系是一样多的</strong></p>
+<h4 id="对称关系"><a href="#对称关系" class="headerlink" title="对称关系"></a>对称关系</h4><p>设R为X上的二元关系。如果:所有的x,y∈X,只要xRy就有yRx，则称R是对称的</p>
+<blockquote>
+<p>模n同余就是一个对称关系</p>
+</blockquote>
+<h4 id="反对称关系"><a href="#反对称关系" class="headerlink" title="反对称关系"></a>反对称关系</h4><p>设R为X上的二元关系。对X的任意元素x,y,如果：xRy且yRx，则x=y,那么就称R为反对称的</p>
+<h4 id="传递关系"><a href="#传递关系" class="headerlink" title="传递关系"></a>传递关系</h4><p>设R为X上的二元关系。如果对X上的任意x,y,z,只要xRy且yRz,就有xRz，则称R为传递关系</p>
+<h4 id="相容关系"><a href="#相容关系" class="headerlink" title="相容关系"></a>相容关系</h4><p>集合X上的二元关系R称为是相容关系，如果R是自反的且又是对称的</p>
+<h4 id="关系的闭包"><a href="#关系的闭包" class="headerlink" title="关系的闭包"></a>关系的闭包</h4><ul>
+<li>关系的闭包的思想是想通过增加一些元素,使原来的关系符合某种性质.但增加的元素要最少</li>
+<li>自反,对称,传递,相容关系存在闭包</li>
+<li>传递闭包R+, 自反传递闭包R<em> R</em>= R0 ∪ R+</li>
+</ul>
+<h4 id="关系矩阵"><a href="#关系矩阵" class="headerlink" title="关系矩阵"></a>关系矩阵</h4><p><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190712113002.png" alt></p>
+<ul>
+<li>自反关系   =&gt; 对角线的元素都为1</li>
+<li>反自反关系 =&gt; 对角线的元素都为0</li>
+<li>对称关系   =&gt; 是对称矩阵</li>
+<li>反对称关系 =&gt; 不是对称矩阵</li>
+<li>关系的逆   =&gt; 矩阵的转置</li>
+</ul>
+<h4 id="等价关系"><a href="#等价关系" class="headerlink" title="等价关系"></a>等价关系</h4><p>自反,对称,传递关系 例如:模n同余关系</p>
+<h4 id="偏序关系"><a href="#偏序关系" class="headerlink" title="偏序关系"></a>偏序关系</h4><p>自反,反对称,传递关系 例如:集合X的幂集上的包含于关系<br><strong>全序关系</strong><br>关系本身就是一个二元关系的集合。偏序只需在这个集合范围类满足自反性、反对称性、传递性；而全序关系则不然，需要在整个集合范围内满足这三个性质</p>
+<h4 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h4><ol>
+<li>X上自反二元关系的个数;     2^(n²-n)</li>
+<li>X上反自反二元关系的个数;   2^(n²-n)</li>
+<li>X上对称二元关系的个数;     2^(0.5n²+0.5n)</li>
+<li>X上自反或对称关系的个数;   2^(n²-n)+2^(0.5n²+0.5n)-2^(0.5n²-0.5n)</li>
+</ol>
+<h4 id="可数集"><a href="#可数集" class="headerlink" title="可数集"></a>可数集</h4><p><strong>可数和不可数是针对无限集合来说的</strong></p>
+<ul>
+<li>如果与自然数集合存在一一对应那么就成为可数集</li>
+<li>如果集合不是可数集和有限集那么就是不可数集</li>
+<li>可数个可数集之并是可数集</li>
+<li>全体有理数之集Q是可数集</li>
+<li>整系数代数多项式的全体是一个可数集</li>
+<li>代数数的全体是可数集 整系数代数多项式的根称为代数数,非代数数称为超越数</li>
+</ul>
+<h4 id="连续统集"><a href="#连续统集" class="headerlink" title="连续统集"></a>连续统集</h4><p>凡与集合[0,1]对等的集合称为具有“连续统的势”的集合, 或简称连续统<br>实数是连续统 =&gt; 无理数是连续统 =&gt; 超越数是连续统<br>连续统个连续统的并集还是连续统</p>
+<h2 id="图论"><a href="#图论" class="headerlink" title="图论"></a>图论</h2><h3 id="图的基本概念"><a href="#图的基本概念" class="headerlink" title="图的基本概念"></a>图的基本概念</h3><ul>
+<li>E是点集,V是边集</li>
+</ul>
+<h4 id="无向图"><a href="#无向图" class="headerlink" title="无向图"></a>无向图</h4><ul>
+<li>无向图: V是E上的反自反对称关系</li>
+<li>(p,q)图: p个顶点,q条边</li>
+<li>带环图: 联结一个顶点与其自身的边称为环，允许有环存在的图称为带环图</li>
+<li>多重边图: 如果允许两个顶点之间有两个以上的边存在，这样的边称为多重边，允许有环与多重边存在的图，我们称为伪图</li>
+<li>零图: 只有顶点没有边,n个顶点的零图称为n阶零图</li>
+<li>完全图: 任意两个顶点间都有唯一的边,n个顶点的完全图用Kn表示,Kn有n(n-1)/2条边</li>
+</ul>
+<h4 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h4><ul>
+<li>弧,对称弧</li>
+<li>弧的起点和终点</li>
+<li>定向图: 不含对称弧的有向图称为定向图<br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190712153620.png" alt></li>
+</ul>
+<h4 id="子图"><a href="#子图" class="headerlink" title="子图"></a>子图</h4><p>点可以是子集, 边也可以是子集<br>K3的子图个数: 一个顶点的有3个，两个顶点的有6个，3个定点的有8个，17个子图</p>
+<h4 id="生成子图"><a href="#生成子图" class="headerlink" title="生成子图"></a>生成子图</h4><p>设G=(V,E)是一个图, 如果F∈E,则称G的子图H=(V, F)为G的生成子图<br>简单说就是点不能少<br>K3的生成子图个数: 8个</p>
+<h4 id="极大子图"><a href="#极大子图" class="headerlink" title="极大子图"></a>极大子图</h4><p><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190712154052.png" alt></p>
+<h4 id="导出子图"><a href="#导出子图" class="headerlink" title="导出子图"></a>导出子图</h4><p>指定一个点集,包含这个点集的极大子图就是导出子图<br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190712154159.png" alt></p>
+<h4 id="顶点的度"><a href="#顶点的度" class="headerlink" title="顶点的度"></a>顶点的度</h4><ul>
+<li>各顶点度的和是边数的2倍</li>
+<li>任一图中,度为奇数的顶点的数目必为偶数</li>
+</ul>
+<h4 id="n次图"><a href="#n次图" class="headerlink" title="n次图"></a>n次图</h4><p>所有顶点的度都是n,叫做n次图</p>
+<h4 id="通道与闭通道"><a href="#通道与闭通道" class="headerlink" title="通道与闭通道"></a>通道与闭通道</h4><p><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190712163752.png" alt></p>
+<h4 id="迹与闭迹"><a href="#迹与闭迹" class="headerlink" title="迹与闭迹"></a>迹与闭迹</h4><p>如果图中一条通道上的各<strong>边</strong>互不相同,则称此通道为图的迹，如果一条闭通道上的各边互不相同，则此闭通道称为闭迹</p>
+<p>迹:简单通路<br>闭迹:简单回路<br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190712164442.png" alt></p>
+<h4 id="路与圈"><a href="#路与圈" class="headerlink" title="路与圈"></a>路与圈</h4><p>如果图中一条通道上的各<strong>顶点</strong>互不相同,则称此通道为路,如果闭通道上各顶点互不相同,则称此闭通道为圈,或回路<br>路:初级通路<br>圈:初级回路<br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190712164507.png" alt></p>
+<h4 id="连通图与极大连通子图"><a href="#连通图与极大连通子图" class="headerlink" title="连通图与极大连通子图"></a>连通图与极大连通子图</h4><p>连通图: 任意两点都有一条路连接<br>极大联通子图: 支</p>
+<h4 id="偶图"><a href="#偶图" class="headerlink" title="偶图"></a>偶图</h4><p>能够将点分割成两个集合, 所有的边都是两个端点在不同的集合</p>
+<p><strong>完全偶图</strong><br>分割成两个集合, 这两个集合任意两个点都存在边<br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190712165401.png" alt></p>
+<p><strong>两点间的距离</strong><br>两点间最短路的长</p>
+<p>偶图的充要条件所有圈都是偶数长</p>
+<h4 id="欧拉图"><a href="#欧拉图" class="headerlink" title="欧拉图"></a>欧拉图</h4><p>包含图的所有顶点和所有边的闭迹称为欧拉闭迹,存在一条欧拉闭迹的图称为欧拉图<br>欧拉图等价于是连通图且每个顶点的度是偶数<br><strong>能够一笔画的图存在欧拉迹</strong><br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190712171945.png" alt></p>
+<h4 id="哈密顿图"><a href="#哈密顿图" class="headerlink" title="哈密顿图"></a>哈密顿图</h4><p>哈密顿路: 一条包含所有顶点的路<br>哈密顿圈: 一条包含所有顶点的圈<br>哈密顿图: 有哈密顿圈的图<br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190712172339.png" alt><br>哈密顿图=&gt;连通图且顶点度数不能小于2<br>哈密顿路=&gt;是连通图且1度顶点不能多于2个</p>
+<p>p(p≥3)个顶点的图,如果最小度≥p/2那么就是哈密顿图</p>
+<h3 id="树和割集"><a href="#树和割集" class="headerlink" title="树和割集"></a>树和割集</h3><h4 id="树和森林的定义"><a href="#树和森林的定义" class="headerlink" title="树和森林的定义"></a>树和森林的定义</h4><p>树: 连通且无圈的无向图称为无向树,简称树<br>森林: 一个没有圈的不连通的无向图称为无向森林,简称森林<br>平凡树: 仅有一个顶点的树<br><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190712174713.png" alt></p>
+<p><strong>极小连通图</strong><br>去掉任何一条边都不是连通图<br>图是树当且仅当该图是极小连通图</p>
+<h4 id="偏心率-半径-中心"><a href="#偏心率-半径-中心" class="headerlink" title="偏心率,半径,中心"></a>偏心率,半径,中心</h4><p>偏心率:一个顶点到其他顶点的最远距离  e(v)<br>半径:偏心率的最小值                  r(G)<br>中心:偏心率是半径的点集合          C(G)<br>对于树来说</p>
+<ul>
+<li>每棵树的中心或含有一个顶点,或含有两个邻接的顶点</li>
+<li>离中心最远的点都是一度顶点</li>
+<li>去掉一度顶点不会引起中心点的变化</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Evolution404/picgo-img/master/20190712180058.png" alt></p>
+</div></article><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2019/07/14/review/计算机组成原理/"><i class="fa fa-chevron-left">  </i><span>计算机组成原理</span></a></div><div class="next-post pull-right"><a href="/2019/06/18/shell/awk学习/"><span>awk学习</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span>评论</span></div><div id="vcomment"></div><script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var notify = 'false' == true ? true : false;
+var verify = 'false' == true ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'6gtOwA2GHt58meLiqVoE8cet-gzGzoHsz',
+  appKey:'QpeNYt9Rb5S95BmN3fgBuRmi',
+  placeholder:'留下你的足迹吧',
+  avatar:'mp',
+  guest_info:guest_info,
+  pageSize:'10',
+  lang: 'zh-cn'
+})</script></div></div></div><footer class="footer-bg" style="background-image: url(https://evolution404.gitee.io/markdownimg/20190513125446.png)"><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2021 By zhang Yuxi</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><section class="rightside" id="rightside"><i class="fa fa-comments-o" id="to_comment"></i><i class="fa nightshift fa-moon-o" id="nightshift"></i></section><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script src="/js/js.cookie.js"></script><script src="/js/search/local-search.js"></script><script src="/js/pace/pace.min.js"></script><script src="/js/nightshift/nightshift.js"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}
+$("#to_comment").on("click", function() {
+  var t = $("#post-comment").offset();
+  $("body,html").animate({
+    scrollTop: t.top
+  })
+})</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

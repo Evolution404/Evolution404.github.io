@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="网络编程基本函数和数据结构"><meta name="keywords" content="c"><meta name="author" content="zhang Yuxi"><meta name="copyright" content="zhang Yuxi"><title>Evolution</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#socket函数"><span class="toc-number">1.</span> <span class="toc-text">socket函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#协议族-Protocol-Family"><span class="toc-number">1.1.</span> <span class="toc-text">协议族(Protocol Family)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#套接字类型-type"><span class="toc-number">1.2.</span> <span class="toc-text">套接字类型(type)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#面向连接的套接字-SOCK-STREAM"><span class="toc-number">1.2.1.</span> <span class="toc-text">面向连接的套接字(SOCK_STREAM)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#面向消息的套接字-SOCK-DGRAM"><span class="toc-number">1.2.2.</span> <span class="toc-text">面向消息的套接字(SOCK_DGRAM)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#协议"><span class="toc-number">1.3.</span> <span class="toc-text">协议</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#地址信息sockaddr-in"><span class="toc-number">2.</span> <span class="toc-text">地址信息sockaddr_in</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#网络字节序"><span class="toc-number">2.1.</span> <span class="toc-text">网络字节序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sockaddr-in的初始化"><span class="toc-number">2.2.</span> <span class="toc-text">sockaddr_in的初始化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bind函数"><span class="toc-number">3.</span> <span class="toc-text">bind函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#listen函数"><span class="toc-number">4.</span> <span class="toc-text">listen函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#accept函数"><span class="toc-number">5.</span> <span class="toc-text">accept函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#connect函数"><span class="toc-number">6.</span> <span class="toc-text">connect函数</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://gitee.com/Evolution404/picgo-img/raw/master/20191026181121-HBhrfe.jpg"></div><div class="author-info__name text-center">zhang Yuxi</div><div class="author-info__description text-center">It is not our abilities that show what we truly are , it is our choices</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">91</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">27</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">20</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://evolution404.gitee.io/markdownimg/20190513125446.png)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Evolution</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a><a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a></span></div><div id="post-info"><div id="post-title">网络编程基本函数和数据结构</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2020-08-22<span class="post-meta__separator">|</span><i class="fa fa-calendar-check-o" aria-hidden="true"></i> 更新于 2021-04-30</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/network/">network</a><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">2.2k</span><span class="post-meta__separator">|</span><span>阅读时长: 7 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h3 id="socket函数"><a href="#socket函数" class="headerlink" title="socket函数"></a>socket函数</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">socket</span><span class="params">(<span class="keyword">int</span> domain, <span class="keyword">int</span> type, <span class="keyword">int</span> protocol)</span></span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>成功时返回⽂件描述符,失败时返回-1</li>
+<li>domain: 套接字中使⽤的协议族(Protocol Family)</li>
+<li>type: 套接字数据传输的类型信息</li>
+<li>protocol: 计算机间通信使用的协议信息</li>
+</ul>
+<h4 id="协议族-Protocol-Family"><a href="#协议族-Protocol-Family" class="headerlink" title="协议族(Protocol Family)"></a>协议族(Protocol Family)</h4><p>通过 socket 函数的第一个参数传递套接字中使用的协议分类信息。此协议分类信息称为协议族，可分成如下几类：</p>
+<blockquote>
+<p>头文件 <code>sys/socket.h</code> 中声明的协议族</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>协议族</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PF_INET</td>
+<td>IPV4 互联网协议族</td>
+</tr>
+<tr>
+<td>PF_INET6</td>
+<td>IPV6 互联网协议族</td>
+</tr>
+<tr>
+<td>PF_LOCAL</td>
+<td>本地通信 Unix 协议族</td>
+</tr>
+<tr>
+<td>PF_PACKET</td>
+<td>底层套接字的协议族</td>
+</tr>
+<tr>
+<td>PF_IPX</td>
+<td>IPX Novel 协议族</td>
+</tr>
+</tbody>
+</table>
+<p>这些名字中<code>PF = Protocol Family</code>,还有<code>AF = Address Family</code>这两个分别代表了协议族和地址族<br>协议族用于socket函数,地址族用于<code>sockaddr_in</code>结构体<br><code>INET</code>就是<code>internet</code>的缩写</p>
+<h4 id="套接字类型-type"><a href="#套接字类型-type" class="headerlink" title="套接字类型(type)"></a>套接字类型(type)</h4><p>已经通过第一个参数传递了协议族信息,每个协议族还有各自的若干种数据传输方式,这些传输方式就由套接字类型表示<br>例如<code>PF_INET</code>就有<code>SOCK_STREAM</code>和<code>SOCK_DGRAM</code>两种传输方式</p>
+<h5 id="面向连接的套接字-SOCK-STREAM"><a href="#面向连接的套接字-SOCK-STREAM" class="headerlink" title="面向连接的套接字(SOCK_STREAM)"></a>面向连接的套接字(SOCK_STREAM)</h5><p>如果 socket 函数的第二个参数传递<code>SOCK_STREAM</code>，将创建面向连接的套接字。</p>
+<p>传输方式特征整理如下：</p>
+<ul>
+<li>传输过程中数据不会消失</li>
+<li>按序传输数据</li>
+<li>传输的数据不存在数据边界（Boundary）</li>
+</ul>
+<p>这种情形适用于之前说过的 write 和 read 函数</p>
+<blockquote>
+<p>传输数据的计算机通过调用3次 write 函数传递了 100 字节的数据，但是接受数据的计算机仅仅通过调用 1 次 read 函数调用就接受了全部 100 个字节。</p>
+</blockquote>
+<p>收发数据的套接字内部有缓冲（buffer），简言之就是字节数组。只要不超过数组容量，那么数据填满缓冲后过 1 次 read 函数的调用就可以读取全部，也有可能调用多次来完成读取。</p>
+<p><strong>套接字缓冲已满是否意味着数据丢失？</strong></p>
+<blockquote>
+<p>答：缓冲并不总是满的。如果读取速度比数据传入过来的速度慢，则缓冲可能被填满，但是这时也不会丢失数据，因为传输套接字此时会停止数据传输，所以面向连接的套接字不会发生数据丢失。</p>
+</blockquote>
+<p>套接字联机必须一一对应。面向连接的套接字可总结为：</p>
+<p><strong>可靠地、按序传递的、基于字节的面向连接的数据传输方式的套接字。</strong></p>
+<h5 id="面向消息的套接字-SOCK-DGRAM"><a href="#面向消息的套接字-SOCK-DGRAM" class="headerlink" title="面向消息的套接字(SOCK_DGRAM)"></a>面向消息的套接字(SOCK_DGRAM)</h5><p>如果 socket 函数的第二个参数传递<code>SOCK_DGRAM</code>，则将创建面向消息的套接字。面向消息的套接字可以比喻成高速移动的摩托车队。特点如下：</p>
+<ul>
+<li>强调快速传输而非传输有序</li>
+<li>传输的数据可能丢失也可能损毁</li>
+<li>传输的数据有边界</li>
+<li>限制每次传输数据的大小</li>
+</ul>
+<p>面向消息的套接字比面向连接的套接字更具哟传输速度，但可能丢失。特点可总结为：</p>
+<p><strong>不可靠的、不按序传递的、以数据的高速传输为目的套接字。</strong></p>
+<h4 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h4><p>如果同一协议族内存在多种传输方式相同的协议就需要传递这一参数<br>针对<code>PF_INET</code>协议族面向连接的套接字只有<code>IPPROTO_TCP</code>,面向消息的套接字只有<code>IPPROTO_UDP</code><br>所以在创建套接字时第三个参数可以可以填写<code>IPPROTO_xxx</code>或者0<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// tcp套接字的创建方法</span></span><br><span class="line">socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);</span><br><span class="line">socket(PF_INET, SOCK_STREAM, <span class="number">0</span>);</span><br><span class="line"><span class="comment">// udp套接字的创建方法</span></span><br><span class="line">socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP);</span><br><span class="line">socket(PF_INET, SOCK_DGRAM, <span class="number">0</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="地址信息sockaddr-in"><a href="#地址信息sockaddr-in" class="headerlink" title="地址信息sockaddr_in"></a>地址信息sockaddr_in</h3><p>该结构体的定义<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">sa_family_t</span> sin_family;  <span class="comment">//地址族（Address Family）</span></span><br><span class="line">    <span class="keyword">uint16_t</span> sin_port;       <span class="comment">//16 位 TCP/UDP 端口号</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">in_addr</span> <span class="title">sin_addr</span>;</span> <span class="comment">//32位 IP 地址</span></span><br><span class="line">    <span class="keyword">char</span> sin_zero[<span class="number">8</span>];        <span class="comment">//不使用</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>该结构体中提到的另一个结构体<code>in_addr</code>定义如下,它用来存放 32 位IP地址</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">in_addr</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">in_addr_t</span> s_addr; <span class="comment">//32位IPV4地址</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="网络字节序"><a href="#网络字节序" class="headerlink" title="网络字节序"></a>网络字节序</h4><p>字节序与网络字节序转换共有四个函数<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">unsigned</span> short <span class="title">htons</span><span class="params">(<span class="keyword">unsigned</span> short)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">unsigned</span> short <span class="title">ntohs</span><span class="params">(<span class="keyword">unsigned</span> short)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="title">htonl</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">long</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="title">ntohl</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">long</span>)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>通过函数名称掌握其功能，只需要了解：</p>
+<ul>
+<li>htons 的 h 代表主机（host）字节序。</li>
+<li>htons 的 n 代表网络（network）字节序。</li>
+<li>s 代表 short</li>
+<li>l 代表 long</li>
+</ul>
+<h4 id="sockaddr-in的初始化"><a href="#sockaddr-in的初始化" class="headerlink" title="sockaddr_in的初始化"></a>sockaddr_in的初始化</h4><ol>
+<li>定义结构体后将所有内容设置为0</li>
+<li><code>sockaddr_in</code>结构体中的<code>sin_family</code>设置为<code>AF_INET</code>代表IPv4地址</li>
+<li><code>sockaddr_in</code>结构体中的<code>sin_addr</code>使用<code>inet_addr</code>将ip地址转换成32位int类型</li>
+<li><code>sockaddr_in</code>结构体中的<code>sin_port</code>需要使用网络字节序保存</li>
+</ol>
+<p><strong>intet_addr和inet_aton</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *addr = <span class="string">"1.2.3.4"</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"0x%x\n"</span>, inet_addr(addr));</span><br></pre></td></tr></table></figure></p>
+<p>输出结果<code>0x4030201</code><br>可以看出首先是将ip地址转换为了32位int,然后将小端序转换为了网络字节序(大端序)<br>由于使用<code>inet_addr</code>对<code>sockaddr_in</code>初始化需要<code>serv_addr.sin_addr.s_addr</code>两次引用<br>可以使用<code>inet_aton</code>函数简化操作<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inet_aton(<span class="string">"127.0.0.1"</span>, &amp;serv_addr.sin_addr);</span><br></pre></td></tr></table></figure></p>
+<p>若要让<code>sin_addr</code>监听所有地址可以设置为<code>INADDR_ANY</code><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);</span><br></pre></td></tr></table></figure></p>
+<p><strong>示例代码</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span> <span class="title">serv_addr</span>;</span></span><br><span class="line"><span class="built_in">memset</span>(&amp;serv_addr, <span class="number">0</span>, <span class="keyword">sizeof</span>(serv_addr));  <span class="comment">//每个字节都用0填充</span></span><br><span class="line">serv_addr.sin_family = AF_INET;  <span class="comment">//使用IPv4地址</span></span><br><span class="line"><span class="comment">// 使用inet_addr函数初始化</span></span><br><span class="line">serv_addr.sin_addr.s_addr = inet_addr(<span class="string">"127.0.0.1"</span>);  <span class="comment">//具体的IP地址</span></span><br><span class="line"><span class="comment">// 使用inet_aton函数初始化</span></span><br><span class="line"><span class="comment">//inet_aton("127.0.0.1", &amp;serv_addr.sin_addr);</span></span><br><span class="line"><span class="comment">// 使用INADDR_ANY监听所有地址</span></span><br><span class="line"><span class="comment">// serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);</span></span><br><span class="line">serv_addr.sin_port = htons(<span class="number">1234</span>);  <span class="comment">//端口</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="bind函数"><a href="#bind函数" class="headerlink" title="bind函数"></a>bind函数</h3><p>函数原型如下<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bind</span><span class="params">(<span class="keyword">int</span> sockfd, struct sockaddr *myaddr, <span class="keyword">socklen_t</span> addrlen)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>sockfd是服务端套接字的描述符</li>
+<li>myaddr是存有地址信息的结构体的地址</li>
+<li>代表sockaddr结构体的大小<br>bind函数调用成功,就将第二个参数的地址信息分配给第一个参数的套接字中</li>
+</ul>
+<h3 id="listen函数"><a href="#listen函数" class="headerlink" title="listen函数"></a>listen函数</h3><p>已经调用了bind函数给他要借资分配地址,接下来就是要通过调用 listen 函数进入等待链接请求状态<br>只有调用了listen函数,客户端才能进入可发出连接请求的状态.换言之,这时客户端才能调用connect函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">listen</span><span class="params">(<span class="keyword">int</span> sockfd, <span class="keyword">int</span> backlog)</span></span>;</span><br><span class="line"><span class="comment">//成功时返回0，失败时返回-1</span></span><br><span class="line"><span class="comment">//sock: 希望进入等待连接请求状态的套接字文件描述符，传递的描述符套接字参数称为服务端套接字</span></span><br><span class="line"><span class="comment">//backlog: 连接请求等待队列的长度，若为5，则队列长度为5，表示最多使5个连接请求进入队列</span></span><br></pre></td></tr></table></figure>
+<h3 id="accept函数"><a href="#accept函数" class="headerlink" title="accept函数"></a>accept函数</h3><p>调用 listen 函数后，则应该按序受理。受理请求意味着可接受数据的状态。进入这种状态所需的部件是<strong>套接字</strong>，但是此时使用的不是服务端套接字，此时需要另一个套接字，但是没必要亲自创建，下面的函数将自动创建套接字。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">accept</span><span class="params">(<span class="keyword">int</span> sockfd, struct sockaddr *addr, <span class="keyword">socklen_t</span> *addrlen)</span></span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">成功时返回文件描述符，失败时返回-1</span></span><br><span class="line"><span class="comment">sock: 服务端套接字的文件描述符</span></span><br><span class="line"><span class="comment">addr: 保存发起连接请求的客户端地址信息的变量地址值</span></span><br><span class="line"><span class="comment">addrlen: 的第二个参数addr结构体的长度，但是存放有长度的变量地址。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>sccept 函数受理连接请求队列中待处理的客户端连接请求。函数调用成功后，accept 内部将产生用于数据 I/O 的套接字，并返回其文件描述符。需要强调的是套接字是自动创建的，并自动与发起连接请求的客户端建立连接。</p>
+<h3 id="connect函数"><a href="#connect函数" class="headerlink" title="connect函数"></a>connect函数</h3><p>与服务端相比，区别就在于「请求连接」，他是创建客户端套接字后向服务端发起的连接请求。服务端调用 listen 函数后创建连接请求等待队列，之后客户端即可请求连接。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">connect</span><span class="params">(<span class="keyword">int</span> sock, struct sockaddr *servaddr, <span class="keyword">socklen_t</span> addrlen)</span></span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">成功时返回0，失败返回-1</span></span><br><span class="line"><span class="comment">sock:客户端套接字文件描述符</span></span><br><span class="line"><span class="comment">servaddr: 保存目标服务器端地址信息的变量地址值</span></span><br><span class="line"><span class="comment">addrlen: 以字节为单位传递给第二个结构体参数 servaddr 的变量地址长度</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>客户端调用 connect 函数候，发生以下函数之一才会返回（完成函数调用）:</p>
+<ul>
+<li>服务端接受连接请求</li>
+<li>发生断网等一场状况而中断连接请求</li>
+</ul>
+<p>注意：<strong>接受连接</strong>不代表服务端调用 accept 函数，其实只是服务器端把连接请求信息记录到等待队列。因此 connect 函数返回后并不应该立即进行数据交换。</p>
+</div></article><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/c/">c</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2020/08/24/c/c语言判断机器大端小端/"><i class="fa fa-chevron-left">  </i><span>c语言判断机器大端小端</span></a></div><div class="next-post pull-right"><a href="/2020/08/16/docker/docker基础/"><span>docker基础</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span>评论</span></div><div id="vcomment"></div><script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var notify = 'false' == true ? true : false;
+var verify = 'false' == true ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'6gtOwA2GHt58meLiqVoE8cet-gzGzoHsz',
+  appKey:'QpeNYt9Rb5S95BmN3fgBuRmi',
+  placeholder:'留下你的足迹吧',
+  avatar:'mp',
+  guest_info:guest_info,
+  pageSize:'10',
+  lang: 'zh-cn'
+})</script></div></div></div><footer class="footer-bg" style="background-image: url(https://evolution404.gitee.io/markdownimg/20190513125446.png)"><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2021 By zhang Yuxi</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><section class="rightside" id="rightside"><i class="fa fa-comments-o" id="to_comment"></i><i class="fa nightshift fa-moon-o" id="nightshift"></i></section><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script src="/js/js.cookie.js"></script><script src="/js/search/local-search.js"></script><script src="/js/pace/pace.min.js"></script><script src="/js/nightshift/nightshift.js"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}
+$("#to_comment").on("click", function() {
+  var t = $("#post-comment").offset();
+  $("body,html").animate({
+    scrollTop: t.top
+  })
+})</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>
